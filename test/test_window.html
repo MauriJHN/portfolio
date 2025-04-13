@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Transition Example</title>
+    <style>
+        /* Basic page reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Window that will contain the screens */
+        .window {
+            width: 400px;
+            height: 300px;
+            margin: 50px auto;
+            border: 2px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Each screen style */
+        .screen {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #f5f5f5;
+            display: none; /* Initially hidden */
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.5s ease; /* Smooth transition */
+        }
+
+        /* Visible screen */
+        .screen.active {
+            display: flex;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Screen hidden with fade out */
+        .screen.fade-out {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        /* Navigation buttons */
+        .nav-buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .nav-buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="window">
+        <!-- Screen 1 -->
+        <div class="screen active" id="screen1">Screen 1</div>
+        <!-- Screen 2 -->
+        <div class="screen" id="screen2">Screen 2</div>
+        <!-- Screen 3 -->
+        <div class="screen" id="screen3">Screen 3</div>
+    </div>
+
+    <div class="nav-buttons">
+        <button onclick="changeScreen(1)">Screen 1</button>
+        <button onclick="changeScreen(2)">Screen 2</button>
+        <button onclick="changeScreen(3)">Screen 3</button>
+    </div>
+
+    <script>
+        // Function to change screens
+        function changeScreen(screenNumber) {
+            // Get all screens
+            const screens = document.querySelectorAll('.screen');
+
+            // Loop through all screens
+            screens.forEach((screen, index) => {
+                if (index + 1 === screenNumber) {
+                    // If it's the correct screen, show it
+                    screen.classList.add('active');
+                    screen.classList.remove('fade-out');
+                } else {
+                    // Fade out any other screen
+                    screen.classList.remove('active');
+                    screen.classList.add('fade-out');
+                }
+            });
+
+            // After the fade-out animation, hide the screens
+            setTimeout(() => {
+                screens.forEach((screen) => {
+                    if (!screen.classList.contains('active')) {
+                        screen.style.display = 'none';
+                    } else {
+                        screen.style.display = 'flex';
+                    }
+                });
+            }, 500); // Duration of the fade-out transition
+        }
+    </script>
+
+</body>
+</html>
+

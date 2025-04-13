@@ -1,0 +1,151 @@
+@import url("./base.css");
+
+header {
+  margin-top: 50px;
+}
+
+h1,
+h2 {
+  margin: 20px 0;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.navigation-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 80%;
+  margin: 80px auto 0;
+  justify-content: space-evenly;
+}
+
+.nav-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: none;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid var(--border-color);
+  box-shadow: 4px 4px 8px var(--box-shadow-color);
+  font-family: inherit;
+  font-size: 1.7rem;
+  cursor: pointer;
+  transition-duration: 1s;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: none;
+  }
+}
+
+.contact-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-modal-content {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(from var(--dark-color) h s calc(l + 5));
+  color: #000;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 1.5rem;
+
+  .close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  p,
+  a {
+    width: 70%;
+    margin: 10px 0;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+
+  .copy {
+    margin-left: 30px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 762px) {
+  .contact-modal-content {
+    width: 80%;
+    height: 90%;
+    font-size: 1.2rem;
+  }
+
+  .navigation-container {
+    margin-top: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-option {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}

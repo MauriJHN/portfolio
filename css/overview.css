@@ -1,0 +1,100 @@
+@import url('./base.css');
+
+.overview-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 100px;
+}
+
+.bio {
+  font-size: 1.7rem;
+}
+
+.tech-overview {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  
+  h3 {
+    font-size: 1.7rem;
+  }
+}
+
+.work-experience {
+  font-size: 1.7rem;
+}
+
+.skills {
+  height: 100%;
+  font-size: 1.2rem;
+
+  h3 {
+    margin: 10px 0;
+  }
+
+  span {
+    display: inline-block;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    li {
+      display: inline-block;
+      flex: 1 1 calc(20% - 10px);
+    }
+
+  }
+
+  .adv, .int, .past {
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  
+  .adv {
+    background-color: #59f;
+    color: #fff;
+  }
+
+  .int {
+    background-color: #f59;
+    color: #000;
+  }
+
+  .past {
+    border: 1px solid #fff;
+    color: #fff;
+  }
+
+}
+
+@media only screen and (max-width: 992px) {
+  .overview-content {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .bio {
+    font-size: 1.5rem;
+    max-height: 200px;
+    overflow: hidden;
+    
+  }
+
+  .tech-overview {
+    ul {
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

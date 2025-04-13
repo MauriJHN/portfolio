@@ -1,0 +1,22 @@
+@import url('./base.css');
+
+.skills-container {
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	
+	* {
+		min-height: 50%;
+		border: solid 1px #333;
+	}
+	
+	.tech-skills, .soft-skills {
+		box-sizing: border-box;
+		flex-basis: 50%;
+	}
+	
+	.experience {
+		flex-basis: 100%;
+	}
+}
+

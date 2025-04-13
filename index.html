@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mauricio Hernandez</title>
+    <link href="css/home.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <div class="profile-img"></div>
+        <h1>Mauricio Hernandez</h1>
+        <h2>Software Developer</h2>
+      </header>
+      
+      <div class="navigation-container">
+        <a class="nav-option" href="/overview.html">Overview</a>
+        <a class="nav-option" href="/work-history.html">Work History</a>
+        <a class="nav-option" href="/projects.html">Projects</a>
+        <a class="nav-option" href="/skills.html">Skills</a>
+        <button class="nav-option" onclick="toggleModal()">Contact</button>
+      </div>
+    </div>
+
+    <!-- create modal for contact info -->
+    <div class="contact-modal">
+      <div class="contact-modal-content">
+        <span class="close">&times;</span>
+        <p>Phone: 1-506-501-5246 <span class="copy">copy</span></p>
+        <a href="mailto:mhernan10@outlook.com">Email: mhernan10@outlook.com</a>
+        <a href="https://www.linkedin.com/in/maurijhn/">LinkedIn</a>
+        <a href="https://github.com/MauriJHN">GitHub</a>
+        <a href="https://gitlab.com/el-mau">GitLab</a>
+      </div>
+    </div>
+
+    <script>
+      // toggle modal for contact info
+      function toggleModal() {
+        const modal = document.querySelector('.contact-modal');
+        modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+      }
+
+      // close modal when close button is clicked
+      const close = document.querySelector('.close');
+      close.addEventListener('click', () => {
+        const modal = document.querySelector('.contact-modal');
+        modal.style.display = 'none';
+      })
+
+      // make modal disappear when escape is pressed
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          const modal = document.querySelector('.contact-modal');
+          modal.style.display = 'none';
+        }
+      })
+
+      // copy phone number to clipboard
+      const copy = document.querySelector('.copy');
+      copy.addEventListener('click', () => {
+        navigator.clipboard.writeText('5065015246');
+      })
+    </script>
+  </body>
+</html>

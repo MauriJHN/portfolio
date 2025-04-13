@@ -1,0 +1,54 @@
+@import url('./base.css');
+
+.history-container {
+  padding: 3px;
+  height: 100%;
+  overflow: auto;
+  box-sizing: content-box;
+}
+
+.history-item {
+	margin-bottom: 20px;
+	padding: 20px;
+	border: 1px solid #1f1f1f;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #000;
+	font-size: 1.2rem;
+}
+
+.item-header {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	
+	h4 {
+		font-size: 1.3rem;
+	}
+	
+	h4:nth-child(2) {
+		text-align: center;
+	}
+	
+	h4:nth-child(3) {
+		text-align: right;
+	}
+}
+
+.item-description {
+	font-style: italic;
+}
+
+.item-footer span {
+	margin-right: 20px;
+}
+
+ul.tech-list {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	
+	li {
+		display: inline-block;
+		margin-right: 10px;
+	}
+}
